@@ -1,0 +1,27 @@
+{% extends 'PristoFrontBundle::layout.html.twig' %}
+{# empty Twig template #}
+
+{% block stylesheets %}	
+    {{ parent()}}
+    <link rel="stylesheet" href="{{asset('bundles/pristo/css/product.css')}}" />
+{% endblock %}
+
+{% block contents %}
+       
+{% include "PristoFrontBundle:Product:items.html.twig"  with {'products' : products}%}
+
+{% endblock %}
+
+
+{% block javascripts %}	
+    {{ parent()}}
+    <script src="{{asset("bundles/pristo/js/jquery.bottom-1.0.js")}}"></script>
+    <script src="{{asset("bundles/pristo/js/jquery.mousewheel.min.js")}}"></script>
+    <script src="{{asset("bundles/pristo/js/product.js")}}"></script>
+    <script src="{{asset("bundles/pristo/js/blocksit.min.js")}}"></script>
+    <script type="text/javascript">
+
+var addUrl = "{{url("product_add")}}";        
+    </script>
+   
+{% endblock %}

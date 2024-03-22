@@ -1,0 +1,46 @@
+{% extends "::base.html.twig" %}
+{% block title %} PICker {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('bundles/pristo/css/common.css')}}" />
+    <link rel="stylesheet" href="{{asset('bundles/pristo/css/flexslider.css')}}" />   
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+<style type='text/css'>
+    @font-face{
+	font-family: "Nanum Gothic";
+	src: url('{{asset("bundles/pristo/css/fonts/NanumGothic.eot")}}');
+	src: url('{{asset("bundles/pristo/css/fonts/NanumGothic.eot?#iefix")}}') format('embedded-opentype'),
+	url('{{asset("bundles/pristo/css/fonts/NanumGothic.woff")}}') format('woff'),
+	url('{{asset("bundles/pristo/css/fonts/NanumGothic.ttf")}}') format('truetype');
+	url('{{asset("bundles/pristo/css/fonts/NanumGothic.svg#NanumGothic")}}') format('svg')
+	src: local(※), url('{{asset("bundles/pristo/css/fonts/NanumGothic.woff")}}') format('woff');
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div id="contents">
+    {% block header %}
+        {% include "PristoFrontBundle::header.html.twig" %}
+    {% endblock %}
+    {% block contents %}
+
+    {% endblock %}
+
+    {% block footer %}
+        {% include "PristoFrontBundle::footer.html.twig" %}
+    {% endblock %}
+</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="{{asset("bundles/pristo/js/jquery-2.1.1.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("bundles/pristo/js/flexslider_min.js")}}"></script>
+<script type="text/javascript" src="{{asset("bundles/pristo/js/common.js")}}"></script>
+<script type="text/javascript">
+</script>
+
+{% endblock %}
+

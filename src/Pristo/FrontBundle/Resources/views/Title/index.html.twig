@@ -1,0 +1,48 @@
+{% extends 'PristoFrontBundle::layout.html.twig' %}
+
+{% block stylesheets %}	
+    {{ parent()}}
+    <link rel="stylesheet" href="{{asset('bundles/pristo/css/product.css')}}" />
+    <link rel="stylesheet" href="{{asset('bundles/pristo/css/title.css')}}" />    
+    <link rel="stylesheet" href="{{asset('bundles/pristo/css/login.css')}}" />    
+{% endblock %}
+
+{% block contents %}    
+<div id ="refer" class="full"></div>
+<div id ="blackScreen" class="full"></div>
+<div id=productHead>
+    <ul class="slides">
+        <li>
+            <img class ="headImg" src="{{asset("bundles/pristo/image/etc/picker_top_01.png")}}">
+        </li>
+        <li>
+            <img class ="headImg" src="{{asset("bundles/pristo/image/etc/picker_top_03.png")}}">
+        </li>
+    </ul>
+</div>       
+    
+{% include "PristoFrontBundle:Product:items.html.twig"  with {'products' : products}%}
+{% include "PristoFrontBundle:Product:detail.html.twig" %}
+{% include "PristoFrontBundle:Title:login.html.twig" %}
+    
+
+
+
+{% endblock %}
+{% block javascripts %}	
+    {{ parent()}}
+    <script type="text/javascript" src="{{asset("bundles/pristo/js/jquery.bottom-1.0.js")}}"></script>
+    <script type="text/javascript" src="{{asset("bundles/pristo/js/preloadjs-0.4.1.min.js")}}"></script>
+    <script type="text/javascript" src="{{asset("bundles/pristo/js/jquery.easing.min.js")}}"></script>
+    <script type="text/javascript" src="{{asset("bundles/pristo/js/product.js")}}"></script>
+    <script type="text/javascript" src="{{asset("bundles/pristo/js/blocksit.min.js")}}"></script>
+    <script type="text/javascript"  src="{{asset("bundles/pristo/js/login.js")}}"></script>   
+    <script type="text/javascript"  src="{{asset("bundles/pristo/js/title.js")}}"></script>   
+    <script type="text/javascript">         
+var detailUrl = "{{url("product_detail")}}";
+var addUrl = "{{url("product_add")}}";
+var thumbUrl = "{{asset("bundles/pristo/image/items/")}}";
+var refPath = "{{asset(ref)}}";
+var quick = null;
+    </script>
+{% endblock %}

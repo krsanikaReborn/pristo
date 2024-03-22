@@ -1,0 +1,18 @@
+parameters:
+#   pristo_front.example.class: Pristo\FrontBundle\Example
+    webpath : %kernel.root_dir%/../web/
+    items : %kernel.root_dir%/../web/bundles/pristo/image/items/
+    
+
+services:
+    pristo.twig.pristo_extension:
+        class: Pristo\FrontBundle\Twig\PristoExtension
+#        arguments : [ "@request" ]
+        calls :
+            - [setRequest, ["@?request="]]
+        tags:
+            - { name: twig.extension }    
+                
+#    pristo_front.example:
+#        class: %pristo_front.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

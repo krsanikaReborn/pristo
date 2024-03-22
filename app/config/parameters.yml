@@ -1,0 +1,22 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: pristo.cy6gu5janyfp.ap-northeast-1.rds.amazonaws.com
+    database_port: 3306
+    database_user: generis
+    database_password: generis123
+    database_name: pristo
+    
+    mailer_transport: smtp
+    mailer_host: smtp.generis.jp
+    mailer_user: pristoregister@generis.jp
+    mailer_password: generis123
+    mailer_encryption : 
+    mailer_authmode :
+    mailer_port : 587
+    
+    locale: ja
+    secret: bc5597118012490c3553d73fac2cd0b05d9ccb7d
+    debug_toolbar: true
+    debug_redirects: false
+    use_assetic_controller: true
